@@ -3,3 +3,12 @@ Django-Twitter
 ==================
 
 Django-Twitter is a Django app that makes the integration of a twitter client easier and faster. It takes advantage of Django's powerful template language and custom template tag filters.
+
+==================
+TO DO
+==================
+- Live demo
+- Example App
+- Enabling use of other templates
+- Allow users to add id and class in div wrapper
+- Hashtag filtering
