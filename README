@@ -4,6 +4,8 @@ Django-Twitter
 
 Django-Twitter is a Django app that makes the integration of a twitter client easier and faster. It takes advantage of Django's powerful template language and custom template tag filters.
 
+NOTE: Protected tweets are not recovered by the app since this is using Twitter's Search API.
+
 ==================
 EXAMPLE
 ==================
@@ -13,6 +15,28 @@ EXAMPLE
 - Login as admin
 - Add Twitter Usernames
 - Proceed to http://localhost:8000
+
+==========================
+HOW TO USE Django-Twitter
+==========================
+- Download the repo
+- Extract the the tweets app from the archive
+- Add the tweets app into your project directory
+- Add 'tweets' in your INSTALLED_APPS
+- Add the path to the dir 'tweets/static' in your STATICFILES_DIRS
+- Add the path to the dir 'tweets/templates' in your TEMPLATE_DIRS
+- Add the following lines to the head of the page where you want the stream to appear
+        <head>
+        ...
+        <script type='text/javascript' src='{{ STATIC_URL }}jquery/jquery.min.js'></script>
+        <script type='text/javascript' src='{{ STATIC_URL }}jquery/jquery-tmpl.js'></script>
+        <script type='text/javascript' src='{{ STATIC_URL }}knockout/knockout-1.2.1.js'></script>
+        <script type='text/javascript' src='{{ STATIC_URL }}twitter/twitterApi.js'> </script>
+        ...
+        </head>
+- Add the following lines to the part of the template where you want the stream to appear
+    {% load recover_tweets %}
+    {% recover_tweets %}
 
 ==================
 TO DO
